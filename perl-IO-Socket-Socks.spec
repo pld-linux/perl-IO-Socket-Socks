@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	IO
 %define		pnam	Socket-Socks
 Summary:	IO::Socket::Socks - provides a way to create socks client or server both 4 and 5 version
