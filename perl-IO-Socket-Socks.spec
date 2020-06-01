@@ -8,7 +8,7 @@ Summary:	IO::Socket::Socks - provides a way to create socks client or server bot
 Summary(pl.UTF-8):	IO::Socket::Socks - tworzenie klienta i serwera SOCKS w wersji 4 i 5
 Name:		perl-IO-Socket-Socks
 Version:	0.74
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/IO/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -36,6 +36,8 @@ można również utworzyć serwer SOCKS.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+
+%{__sed} -E -i -e '1s,#!\s*/usr/bin/env\s+perl(\s|$),#!%{__perl}\1,' examples/*.pl
 
 %build
 %{__perl} Makefile.PL \
